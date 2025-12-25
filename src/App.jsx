@@ -53,9 +53,9 @@ const InvitationContent = () => {
             <div className={`fixed bottom-6 right-6 z-50 transition-all duration-500 ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
                 <button 
                     onClick={toggleMusic}
-                    className="bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-lg border border-wedding-gold text-wedding-gold hover:bg-wedding-gold hover:text-white transition-all animate-spin-slow"
+                    className="bg-white/80 backdrop-blur-sm p-1 rounded-full shadow-lg border border-wedding-gold text-wedding-gold hover:bg-wedding-gold hover:text-white transition-all animate-spin-slow"
                 >
-                    {isPlaying ? <PauseCircle size={28} /> : <PlayCircle size={28} />}
+                    {isPlaying ? <PauseCircle size={26} /> : <PlayCircle size={26} />}
                 </button>
             </div>
 
