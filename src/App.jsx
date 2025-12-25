@@ -10,7 +10,7 @@ import Gallery from './components/Gallery';
 import ThankYou from './components/ThankYou';
 import RSVP from './components/RSVP';
 import Footer from './components/Footer';
-import backsound from './assets/backsound.mp3';
+import backsound from './assets/backsound2.mp3';
 
 const InvitationContent = () => {
     const { guestName } = useParams();
