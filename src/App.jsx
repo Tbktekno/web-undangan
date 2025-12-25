@@ -10,12 +10,13 @@ import Gallery from './components/Gallery';
 import ThankYou from './components/ThankYou';
 import RSVP from './components/RSVP';
 import Footer from './components/Footer';
+import backsound from './assets/backsound.mp3';
 
 const InvitationContent = () => {
     const { guestName } = useParams();
     const [isOpen, setIsOpen] = useState(false);
     const [isPlaying, setIsPlaying] = useState(false);
-    const audioRef = useRef(new Audio('https://cdn.pixabay.com/download/audio/2022/03/10/audio_c8c8a73467.mp3?filename=piano-moment-11143.mp3'));
+    const audioRef = useRef(new Audio());
     
     // Decode URL component to handle spaces and special characters e.g. "Ardin%20dan%20Partner" -> "Ardin dan Partner"
     const decodedGuestName = guestName ? decodeURIComponent(guestName) : '';
@@ -37,12 +38,15 @@ const InvitationContent = () => {
 
     useEffect(() => {
         const audio = audioRef.current;
+        audio.src = backsound; // Force set the source
         audio.loop = true;
+        console.log("Audio source set to:", backsound);
+        
         return () => {
             audio.pause();
             audio.currentTime = 0;
         }
-    }, []);
+    }, [backsound]);
 
     return (
         <div className={`min-h-screen font-sans ${isOpen ? 'overflow-auto' : 'overflow-hidden h-screen'}`}>
